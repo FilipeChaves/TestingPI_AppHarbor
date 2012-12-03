@@ -1,0 +1,19 @@
+﻿@model Etapa1.Models.ListsModel
+
+@{
+    ViewBag.Title = "Editar lista";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Editar a lista '@Model.Name' </h2>
+
+@using(Html.BeginForm())
+{
+    <p>
+        @Html.LabelFor(m => m.Name)
+        @Html.EditorFor(m => m.Name)
+        @Html.ValidationMessageFor(m => m.Name)
+    </p>
+    <input type="submit" value="Submeter" />
+}
+<p> @Html.ActionLink("Voltar", "GetCards", "Lists", new {id = Model.Id}, null) </p>

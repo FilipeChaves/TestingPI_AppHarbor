@@ -1,0 +1,19 @@
+﻿@model Etapa1.Models.ListsModel
+
+@{
+    ViewBag.Title = String.Format("Criar Lista para '{0}'", @Model.Board.Name);
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Criar Lista para o Quadro '@Model.Board.Name' </h2>
+
+@using(@Html.BeginForm())
+{
+    <p>
+        @Html.LabelFor(l => l.Name)
+        @Html.EditorFor(l => l.Name)
+        @Html.ValidationMessageFor(l => l.Name)
+    </p>
+    <input type="submit" value="Submeter" />
+}
+<p> @Html.ActionLink("Voltar", "GetLists", "Boards", new { id = @Model.Board.Id }, null) </p>

@@ -1,0 +1,22 @@
+﻿@model Etapa1.Models.MoveToListModel
+
+@{
+    ViewBag.Title = "Mover Cartão";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Mover cartão para outra lista</h2>
+
+@using(@Html.BeginForm()){
+    <p>
+        @Html.LabelFor(m => m.ListId)
+        @Html.EditorFor(m => m.ListId)
+        @Html.ValidationMessageFor(m => m.ListId)
+    </p>
+    <p>
+        @Html.LabelFor(m => m.CardId)
+        @Html.EditorFor(m => m.CardId)
+        @Html.ValidationMessageFor(m => m.CardId)
+    </p>
+    <input type="submit" value="Submeter"/>
+}

@@ -1,0 +1,48 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.7.1.min.js")" type="text/javascript"></script>
+</head>
+
+<body>
+    <div class="page">
+        <div id="header">
+            <div id="title">
+                <h1>Trabalho de PI - G11</h1>
+            </div>
+            <div id="logindisplay">
+                @if(Request.IsAuthenticated) {
+                <text>Bem-vindo <strong>@User.Identity.Name</strong>!
+                    [ @Html.ActionLink("Sair", "LogOut", "Account") ]
+                    [ @Html.ActionLink("Eliminar Conta", "SelfDelete", "Account") ]</text>
+                }
+                else {
+                    @:[ @Html.ActionLink("LogIn", "LogOn", "Account") ]
+                }
+            </div>
+            <div id="menucontainer">
+                <ul id="menu">
+                    <li>@Html.ActionLink("Inicio", "Index", "Home") </li>
+                    @if(Request.IsAuthenticated) {
+                            if(User.IsInRole("Admin")){
+                                <li> @Html.ActionLink("Painel de Controlo", "ControlPanel", "Admin") </li> 
+                            }
+                           <li> @Html.ActionLink("Definições de conta", "Settings", "Account") </li>
+                        }else{
+                           <li> @Html.ActionLink("LogIn", "LogOn", "Account") </li>
+                        }
+                </ul>
+            </div>
+        </div>
+        <div id="main">
+            @RenderBody()
+        </div>
+        <div id="footer">
+                © Grupo 11 - Programação na Internet Semestre Inverno - 2012/13
+        </div>
+    </div>
+    
+</body>
+</html>
