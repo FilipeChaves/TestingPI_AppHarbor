@@ -1,0 +1,66 @@
+﻿<RecentFiles>
+  <RecentFiles>
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Lists/f:Edit.cshtml" caret="411" fromTop="16" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Models/f:ListsModel.cs" caret="0" fromTop="0" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Admin/f:ControlPanel.cshtml" caret="75" fromTop="3" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Models/f:AccountModel.cs" caret="1031" fromTop="0" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:DataMappers/f:CardDataMapper.cs" caret="330" fromTop="12" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Providers/f:AccountRoleProvider.cs" caret="701" fromTop="15" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Controllers/f:HomeController.cs" caret="110" fromTop="4" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Boards/f:Edit.cshtml" caret="126" fromTop="7" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Controllers/f:AdminController.cs" caret="671" fromTop="12" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Controllers/f:BoardsController.cs" caret="5697" fromTop="34" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Models/f:GiveRightsModel.cs" caret="351" fromTop="14" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Models/f:ChangeEmailModel.cs" caret="0" fromTop="0" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Boards/f:GetLists.cshtml" caret="463" fromTop="7" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:DataMappers/f:IDataMapper.cs" caret="0" fromTop="0" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Account/f:SetImage.cshtml" caret="81" fromTop="5" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:DataMappers/f:BoardDataMapper.cs" caret="1410" fromTop="25" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Boards/f:GiveWriteRights.cshtml" caret="0" fromTop="0" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Controllers/f:AccountController.cs" caret="6933" fromTop="12" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Boards/f:GiveReadRights.cshtml" caret="336" fromTop="13" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Boards/f:Empty.cshtml" caret="300" fromTop="7" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:DataMappers/f:AccountDataMapper.cs" caret="347" fromTop="13" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Controllers/f:ErrorsController.cs" caret="0" fromTop="0" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Models/f:MoveToListModel.cs" caret="338" fromTop="13" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Cards/f:GetCard.cshtml" caret="898" fromTop="12" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Cards/f:MoveCardToList.cshtml" caret="341" fromTop="13" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Controllers/f:CardsController.cs" caret="3633" fromTop="3" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Cards/f:MoveCardInList.cshtml" caret="0" fromTop="0" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Models/f:CardsModel.cs" caret="0" fromTop="0" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/f:Global.asax.cs" caret="546" fromTop="18" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Controllers/f:ListsController.cs" caret="87" fromTop="3" />
+  </RecentFiles>
+  <RecentEdits>
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Cards/f:Edit.cshtml" caret="768" fromTop="13" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Home/f:Index.cshtml" caret="150" fromTop="7" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Lists/f:GetCards.cshtml" caret="636" fromTop="16" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Lists/f:Empty.cshtml" caret="261" fromTop="9" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Boards/f:Index.cshtml" caret="401" fromTop="15" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Boards/f:Create.cshtml" caret="558" fromTop="21" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Boards/f:CreateList.cshtml" caret="452" fromTop="18" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Boards/f:Edit.cshtml" caret="496" fromTop="20" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Lists/f:CreateCard.cshtml" caret="911" fromTop="17" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Lists/f:Edit.cshtml" caret="411" fromTop="16" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Admin/f:ControlPanel.cshtml" caret="75" fromTop="3" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Controllers/f:AccountController.cs" caret="3702" fromTop="13" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Controllers/f:AdminController.cs" caret="1052" fromTop="17" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:DataMappers/f:CardDataMapper.cs" caret="1327" fromTop="18" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:DataMappers/f:BoardDataMapper.cs" caret="1499" fromTop="12" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Models/f:AccountModel.cs" caret="1031" fromTop="13" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Providers/f:AccountRoleProvider.cs" caret="765" fromTop="23" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Boards/f:GetLists.cshtml" caret="426" fromTop="7" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Boards/f:Empty.cshtml" caret="300" fromTop="7" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Controllers/f:BoardsController.cs" caret="5438" fromTop="21" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Models/f:GiveRightsModel.cs" caret="351" fromTop="14" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Boards/f:GiveReadRights.cshtml" caret="456" fromTop="16" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Boards/f:GiveWriteRights.cshtml" caret="461" fromTop="16" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Account/f:SetImage.cshtml" caret="204" fromTop="10" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:DataMappers/f:AccountDataMapper.cs" caret="2337" fromTop="14" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Models/f:MoveToListModel.cs" caret="338" fromTop="13" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Cards/f:MoveCardToList.cshtml" caret="489" fromTop="18" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Views/d:Cards/f:GetCard.cshtml" caret="1097" fromTop="18" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Controllers/f:CardsController.cs" caret="4985" fromTop="10" />
+    <File id="FF543681-B278-455C-9E60-580FFCBB7CCA/d:Controllers/f:ListsController.cs" caret="3116" fromTop="7" />
+  </RecentEdits>
+</RecentFiles>
