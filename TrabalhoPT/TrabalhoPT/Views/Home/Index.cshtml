@@ -1,0 +1,12 @@
+﻿@model Etapa1.Models.AccountModel
+@{
+    ViewBag.Title = @User.Identity.Name;
+}
+
+<h2>Página Inicial</h2>
+<ul>
+    <li>@Html.ActionLink("Quadros", "Index", "Boards", null, null) </li>
+    <li>@Html.ActionLink("Definições de conta", "Settings", "Account", @Model, null) </li>
+    <li>@Html.ActionLink("Definir imagem de apresentação da conta", "SetImage", "Account", null, null) </li>
+    <li>@Html.ActionLink("Informação da conta", "ShowInfo", "Account", @Model, null) </li>
+</ul>

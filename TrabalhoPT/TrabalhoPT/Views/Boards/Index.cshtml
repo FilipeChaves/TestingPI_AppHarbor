@@ -1,0 +1,17 @@
+﻿@model IEnumerable<Etapa1.Models.BoardsModel>
+
+@{
+    ViewBag.Title = "Todos os Quadros";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Todos os Quadros do Utilizador '@User.Identity.Name' </h2>
+
+<ul>
+    @foreach(var board in @Model)
+    {
+        <li> @Html.ActionLink(board.Name, "GetLists", "Boards", new { id = board.Id}, null) </li>
+    }
+</ul>
+<p> @Html.ActionLink("Criar Quadro", "Create", "Boards", null, null) </p>
+<p> @Html.ActionLink("Início", "Index", "Home", null, null) </p>

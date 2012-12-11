@@ -1,0 +1,27 @@
+﻿@model Etapa1.Models.AccountModel
+@{
+    ViewBag.Title = "Registo";
+}
+
+<h2>Registar nova conta:</h2>
+
+@using(Html.BeginForm())
+{
+    <p>
+        @Html.LabelFor(acc => acc.Username)
+        @Html.EditorFor(acc => acc.Username)
+        @Html.ValidationMessageFor(acc => acc.Username)
+    </p>
+    <p>
+        @Html.LabelFor(acc => acc.Email)
+        @Html.EditorFor(acc => acc.Email)
+        @Html.ValidationMessageFor(acc => acc.Email)
+    </p>
+    <p>
+        @Html.LabelFor(acc => acc.Password)
+        @Html.EditorFor(acc => acc.Password)
+        @Html.ValidationMessageFor(acc => acc.Password)
+        
+    </p>
+    <input type="submit" value="Submit"/>
+}

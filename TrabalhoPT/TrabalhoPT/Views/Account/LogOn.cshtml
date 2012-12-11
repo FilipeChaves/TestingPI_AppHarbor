@@ -1,0 +1,20 @@
+﻿@model Etapa1.Models.AccountModel
+
+<h2>Por favor coloque os seus dados:</h2>
+
+@using(Html.BeginForm())
+    {
+        <p>
+            @Html.LabelFor(acc => acc.Username)
+            @Html.EditorFor(acc => acc.Username)
+            @Html.ValidationMessageFor(acc => acc.Username)
+        </p>
+        <p>
+            @Html.LabelFor(acc => acc.Password)
+            @Html.EditorFor(acc => acc.Password)
+            @Html.ValidationMessageFor(acc => acc.Password)
+        </p>
+        <input type="submit" value="Submit"/>
+    
+        <p>@Html.ActionLink("Registar uma nova conta", "Register", "Account", null, null)</p>
+    }

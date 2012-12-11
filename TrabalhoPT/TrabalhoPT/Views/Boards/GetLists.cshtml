@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Etapa1.Models.ListsModel>
+
+@{
+    ViewBag.Title = String.Format("Listas do '{0}'", @Model.First().Board.Name);
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2> Listas do Quadro '@Model.First().Board.Name' [@Html.ActionLink("Dar acesso de leitura", "GiveReadRights", "Boards", new {id = Model.First().Board.Id}, null)] [@Html.ActionLink("Dar acesso de escrita", "GiveWriteRights", "Boards", new { id = Model.First().Board.Id }, null)] </h2>
+
+<ul>
+    @foreach(var list in @Model)
+    {
+        <li> @Html.ActionLink(list.Name, "GetCards", "Lists", new { id = list.Id }, null) </li>
+    }
+</ul>
+<p> @Html.ActionLink("Criar Lista", "CreateList", "Boards", new { id = @Model.First().Board.Id }, null) </p>
+<p> @Html.ActionLink("Editar Quadro", "Edit", "Boards", new { id = @Model.First().Board.Id }, null) </p>
+<p> @Html.ActionLink("Voltar", "Index", "Boards", null, null) </p>

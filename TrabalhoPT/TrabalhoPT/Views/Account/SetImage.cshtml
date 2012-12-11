@@ -1,0 +1,14 @@
+﻿@{
+    ViewBag.Title = "Definir fotografia";
+}
+
+<h2>Definir fotografia</h2>
+
+@using(Html.BeginForm())
+{
+    <p>
+        @Html.Label("URL: ")
+        @Html.Editor("ImageUrl","ImageUrl","ImageUrl")
+    </p>
+    <input type="submit" value="Submit"/>
+}
