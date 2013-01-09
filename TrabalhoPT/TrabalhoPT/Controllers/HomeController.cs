@@ -21,24 +21,49 @@ namespace TrabalhoPT.Controllers
 
         //
         // GET: /Home/
-        [HttpGet]
-        public String Search(String id)
+        public ActionResult Search(String id)
         {
-            return "cenas";
-            /*
+            int counter = 5;
+            //var result = new List<KeyValuePair<String, String>>();
+            var result = new List<String>();
             BoardDataMapper b = BoardDataMapper.GetBoardDataMapper();
-            b.GetBoardsFrom(User.Identity);
-
-
-
+            foreach (BoardsModel bm in b.GetAll())
+            {
+                if (counter == 0)
+                    goto return_label;
+                if (bm.Name.Contains(id))
+                {
+                    //result.Add(new KeyValuePair<string, string>(bm.Name, "/Boards/GetLists/" + bm.Id));
+                    result.Add(bm.Name);
+                    --counter;
+                }
+            }
+            ListDataMapper l = ListDataMapper.GetListDataMapper();
+            foreach (ListsModel bm in l.GetAll())
+            {
+                if (counter == 0)
+                    goto return_label;
+                if (bm.Name.Contains(id))
+                {
+                    //result.Add(new KeyValuePair<string, string>(bm.Name, "/Lists/GetCards/" + bm.Id));
+                    result.Add(bm.Name);
+                    --counter;
+                }
+            }
+            CardDataMapper c = CardDataMapper.GetCardDataMapper();
+            foreach (CardsModel bm in c.GetAll())
+            {
+                if (counter == 0)
+                    goto return_label;
+                if (bm.Name.Contains(id))
+                {
+                    //result.Add(new KeyValuePair<string, string>(bm.Name, "/Cards/GetCard/" + bm.Id));
+                    result.Add(bm.Name);
+                    --counter;
+                }
+            }
             
-            return Json(new
-                            {
-                                Hour = now.Hour,
-                                Minute = now.Minute,
-                                Second = now.Second
-                            }, JsonRequestBehavior.AllowGet );*/
-
+            return_label: return PartialView("Search",result);
         }
 
     }
