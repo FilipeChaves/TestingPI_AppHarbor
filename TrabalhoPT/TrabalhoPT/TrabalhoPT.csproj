@@ -189,6 +189,8 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\validate.image.js" />
+    <Content Include="Scripts\validate.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -209,7 +211,7 @@
     <Content Include="Scripts\MicrosoftMvcValidation.debug.js" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Web.config" />
-	<Content Include="Views\Index.cshtml" />
+    <Content Include="Views\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Boards\Create.cshtml" />
@@ -247,14 +249,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="DataMappers\" />
-    <Folder Include="Providers\" />
-    <Folder Include="Utils\" />
-    <Folder Include="Views\Admin\" />
-    <Folder Include="Views\Boards\" />
-    <Folder Include="Views\Cards\" />
-    <Folder Include="Views\Errors\" />
-    <Folder Include="Views\Lists\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
