@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Security;
-using Etapa1.DataMappers;
-using Etapa1.Models;
+using TrabalhoPT.DataMappers;
+using TrabalhoPT.Models;
 
-namespace Etapa1.Providers
+namespace TrabalhoPT.Providers
 {
     public class AccountRoleProvider : RoleProvider
     {

@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Etapa1.DataMappers
+namespace TrabalhoPT.DataMappers
 {
     interface IDataMapper<T, K>
     {

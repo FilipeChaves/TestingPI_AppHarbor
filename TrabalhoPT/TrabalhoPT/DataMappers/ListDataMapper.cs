@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Etapa1.Models;
+using TrabalhoPT.Models;
 
-namespace Etapa1.DataMappers
+namespace TrabalhoPT.DataMappers
 {
     class ListDataMapper : IDataMapper<ListsModel, int>
     {

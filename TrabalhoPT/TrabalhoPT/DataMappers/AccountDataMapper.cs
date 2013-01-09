@@ -2,10 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Etapa1.Models;
-using Etapa1.Utils;
+using TrabalhoPT.Models;
+using TrabalhoPT.Utils;
 
-namespace Etapa1.DataMappers
+namespace TrabalhoPT.DataMappers
 {
     public class AccountDataMapper : IDataMapper<AccountModel, String>
     {

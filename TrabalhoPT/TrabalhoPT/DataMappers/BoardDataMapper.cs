@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Etapa1.Models;
-namespace Etapa1.DataMappers
+using TrabalhoPT.Models;
+namespace TrabalhoPT.DataMappers
 {
     class BoardDataMapper : IDataMapper<BoardsModel, int>
     {

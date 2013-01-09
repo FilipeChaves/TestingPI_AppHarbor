@@ -6,10 +6,10 @@ using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Web;
 using System.Web.Security;
-using Etapa1.DataMappers;
-using Etapa1.Models;
+using TrabalhoPT.DataMappers;
+using TrabalhoPT.Models;
 
-namespace Etapa1.Utils
+namespace TrabalhoPT.Utils
 {
     public class LoginUtils
     {

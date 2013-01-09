@@ -4,10 +4,10 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using Etapa1.DataMappers;
-using Etapa1.Models;
+using TrabalhoPT.DataMappers;
+using TrabalhoPT.Models;
 
-namespace Etapa1.Controllers
+namespace TrabalhoPT.Controllers
 {
     public class BoardsController : Controller
     {

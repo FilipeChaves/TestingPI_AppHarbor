@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-using Etapa1.Models;
+using TrabalhoPT.Models;
 
-namespace Etapa1.DataMappers
+namespace TrabalhoPT.DataMappers
 {
     public class ToConfirmDataMapper : IDataMapper<AccountModel, String>
     {

@@ -9,11 +9,11 @@ using System.Web.Mvc;
 using System.Web.Providers.Entities;
 using System.Web.Security;
 using System.Net.NetworkInformation;
-using Etapa1.DataMappers;
-using Etapa1.Models;
-using Etapa1.Utils;
+using TrabalhoPT.DataMappers;
+using TrabalhoPT.Models;
+using TrabalhoPT.Utils;
 
-namespace Etapa1.Controllers
+namespace TrabalhoPT.Controllers
 {
     /*
      * Bibliography: http://msdn.microsoft.com/en-us/library/aa302398.aspx

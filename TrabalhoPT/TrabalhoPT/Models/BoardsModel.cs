@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace Etapa1.Models
+namespace TrabalhoPT.Models
 {
     public class BoardsModel
     {

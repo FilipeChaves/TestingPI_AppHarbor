@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Etapa1.DataMappers;
-using Etapa1.Models;
+using TrabalhoPT.DataMappers;
+using TrabalhoPT.Models;
 
-namespace Etapa1.Controllers
+namespace TrabalhoPT.Controllers
 {
     public class HomeController : Controller
     {
@@ -17,6 +17,28 @@ namespace Etapa1.Controllers
         public ActionResult Index(AccountModel accountModel)
         {
             return View(accountModel);
+        }
+
+        //
+        // GET: /Home/
+        [HttpGet]
+        public String Search(String id)
+        {
+            return "cenas";
+            /*
+            BoardDataMapper b = BoardDataMapper.GetBoardDataMapper();
+            b.GetBoardsFrom(User.Identity);
+
+
+
+            
+            return Json(new
+                            {
+                                Hour = now.Hour,
+                                Minute = now.Minute,
+                                Second = now.Second
+                            }, JsonRequestBehavior.AllowGet );*/
+
         }
 
     }

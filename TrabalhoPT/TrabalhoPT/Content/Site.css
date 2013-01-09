@@ -251,13 +251,19 @@ div#title {
     float: left;
     text-align: left;
 }
-
+#searchDiv,
 #logindisplay {
     font-size: 1.1em;
     display: block;
     text-align: right;
     margin: 10px;
     color: White;
+}
+#search {
+    float:right;
+    width:210px;
+    background: white;
+    color: black;
 }
 
 #logindisplay a:link {

@@ -1,12 +1,12 @@
-﻿using Etapa1.DataMappers;
+﻿using TrabalhoPT.DataMappers;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using Etapa1.Models;
+using TrabalhoPT.Models;
 
-namespace Etapa1.Controllers
+namespace TrabalhoPT.Controllers
 {
     public class CardsController : Controller
     {
