@@ -1,0 +1,8 @@
+﻿@model dynamic
+
+<datalist id="result">
+    @foreach(var pair in @Model)
+    {
+        <option value="@pair" />
+    }
+</datalist>

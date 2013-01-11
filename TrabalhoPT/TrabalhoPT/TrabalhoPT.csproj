@@ -189,6 +189,7 @@
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
+    <Content Include="Scripts\search.js" />
     <Content Include="Scripts\validate.image.js" />
     <Content Include="Scripts\validate.js" />
     <Content Include="Web.config" />
@@ -246,6 +247,7 @@
     <Content Include="Views\Cards\MoveCardInList.cshtml" />
     <Content Include="Views\Lists\RemoveList.cshtml" />
     <Content Include="Views\Cards\MoveCardToList.cshtml" />
+    <Content Include="Views\Home\Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
