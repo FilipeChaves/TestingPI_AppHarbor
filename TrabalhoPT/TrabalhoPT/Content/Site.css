@@ -244,6 +244,7 @@ table th {
 nav, 
 #menucontainer {
     margin-top: 40px;
+    position: static;
 }
 
 div#title {
@@ -259,6 +260,20 @@ div#title {
     margin: 10px;
     color: White;
 }
+
+#searchDiv,
+#searchResults { display: block;
+    font-size: 0.9em;
+}
+
+#searchResults {
+    text-align: right;
+    background: white;
+    padding-right: 10px;
+    width:210px;
+    float:right;  
+}
+
 #search {
     float:right;
     width:210px;

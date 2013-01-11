@@ -24,8 +24,8 @@ namespace TrabalhoPT.Controllers
         public ActionResult Search(String id)
         {
             int counter = 5;
-            //var result = new List<KeyValuePair<String, String>>();
-            var result = new List<String>();
+            var result = new List<KeyValuePair<String, String>>();
+            //var result = new List<String>();
             BoardDataMapper b = BoardDataMapper.GetBoardDataMapper();
             foreach (BoardsModel bm in b.GetAll())
             {
@@ -33,8 +33,8 @@ namespace TrabalhoPT.Controllers
                     goto return_label;
                 if (bm.Name.Contains(id))
                 {
-                    //result.Add(new KeyValuePair<string, string>(bm.Name, "/Boards/GetLists/" + bm.Id));
-                    result.Add(bm.Name);
+                    result.Add(new KeyValuePair<String, String>(bm.Name, "/Boards/GetLists/" + bm.Id));
+                    //result.Add(bm.Name);
                     --counter;
                 }
             }
@@ -45,8 +45,8 @@ namespace TrabalhoPT.Controllers
                     goto return_label;
                 if (bm.Name.Contains(id))
                 {
-                    //result.Add(new KeyValuePair<string, string>(bm.Name, "/Lists/GetCards/" + bm.Id));
-                    result.Add(bm.Name);
+                    result.Add(new KeyValuePair<String, String>(bm.Name, "/Lists/GetCards/" + bm.Id));
+                    //result.Add(bm.Name);
                     --counter;
                 }
             }
@@ -57,8 +57,8 @@ namespace TrabalhoPT.Controllers
                     goto return_label;
                 if (bm.Name.Contains(id))
                 {
-                    //result.Add(new KeyValuePair<string, string>(bm.Name, "/Cards/GetCard/" + bm.Id));
-                    result.Add(bm.Name);
+                    result.Add(new KeyValuePair<String, String>(bm.Name, "/Cards/GetCard/" + bm.Id));
+                    //result.Add(bm.Name);
                     --counter;
                 }
             }

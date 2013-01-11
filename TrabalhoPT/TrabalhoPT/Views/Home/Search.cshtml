@@ -1,8 +1,6 @@
-﻿@model dynamic
+﻿@model List<KeyValuePair<String, String>>
 
-<datalist id="result">
-    @foreach(var pair in @Model)
-    {
-        <option value="@pair" />
-    }
-</datalist>
+@foreach(var pair in @Model)
+{
+    <a href="@pair.Value">@pair.Key</a><br/>
+}
