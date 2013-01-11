@@ -67,16 +67,16 @@ function areAllReqFieldsFilled(form) {
 });*/
 
 function validateRegisterForm() {
-   /* var f = document.forms[1];
+    var f = document.forms[1];
     if (f.getElementsByClassName('field-validation-error').length > 0 || areAllReqFieldsFilled(f))
         return false;
     if (f["Username"] === undefined || f["Email"] === undefined || f["Password"] === undefined)
         return false;
-    return (userValidation(f["Username"]) && passValidation(f["Password"]) && emailValidation(f["Email"]));*/
+    return (userValidation(f["Username"]) && passValidation(f["Password"]) && emailValidation(f["Email"]));
 }
 
 function userValidation(user) {
-    /*var userString = user.value;
+    var userString = user.value;
     if (userString.length < 3) {
         setSpanError(user, 'O Username precisa de ter mais do que 2 caracteres');
         return false;
@@ -93,23 +93,23 @@ function userValidation(user) {
         }
     };
     xmlhttp.open('GET', '/Account/UsernameExists/' + userString);
-    xmlhttp.send();*/
+    xmlhttp.send();
 }
 
 function emailValidation(email) {
-    /*var emailString = email.value;
+    var emailString = email.value;
     if (emailString.indexOf("@", 0) == -1 || emailString.indexOf(".", 0) == -1) {
         setSpanError(email, 'Introduza um email válido');
         return false;
     }
-    setSpanValid(email);*/
+    setSpanValid(email);
 }
 
 function passValidation(password) {
-   /* var passString = password.value;
+    var passString = password.value;
     if (passString.length < 6) {
         setSpanError(password, 'A password tem de ter mais de 6 caracteres');
         return false;
     }
-    setSpanValid(password);*/
+    setSpanValid(password);
 }
