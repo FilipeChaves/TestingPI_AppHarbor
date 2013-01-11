@@ -1,34 +1,3 @@
-/*$(document).ready(function () {
-    console.log("1");
-    
-    //objecto principal
-    var validator = new Object;
-    
-    //Função que executa o pedido ajax
-    validator.ajaxExecuter = function (url, process) {
-        console.log("2");
-        var xhr = new XMLHttpRequest();
-        xhr.open('GET', url);
-        xhr.onreadystatechange = (function () {
-            console.log("3");
-            console.log('ready state changed to %s', xhr.readyState);
-            if (xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200) {
-                process();
-            }
-        });
-        xhr.send();
-    };
-    
-    //Função que valida o nome
-    validator.nameValidator = function(name) {
-        if (name.length == 0)
-            return false
-    };
-    
-    $('#loginForm').getE
-    
-});*/
-
 function setSpanElement(element, msg, oldClass, newClass) {
     var name = element.getAttribute('name');
     var validationValidFields = document.forms[1].getElementsByClassName(oldClass);
@@ -62,10 +31,6 @@ function areAllReqFieldsFilled(form) {
     return true;
 }
 
-/*$(":button").click(function () {
-    areAllReqFieldsFilled(document.forms[1]);
-});*/
-
 function validateRegisterForm() {
     var f = document.forms[1];
     if (f.getElementsByClassName('field-validation-error').length > 0 || areAllReqFieldsFilled(f))
@@ -93,7 +58,7 @@ function userValidation(user) {
         }
     };
     xmlhttp.open('GET', '/Account/UsernameExists/' + userString);
-    xmlhttp.send();
+    return xmlhttp.send();
 }
 
 function emailValidation(email) {
@@ -103,6 +68,7 @@ function emailValidation(email) {
         return false;
     }
     setSpanValid(email);
+    return true;
 }
 
 function passValidation(password) {
@@ -112,4 +78,5 @@ function passValidation(password) {
         return false;
     }
     setSpanValid(password);
+    return true;
 }
