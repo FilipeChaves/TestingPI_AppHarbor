@@ -7,7 +7,7 @@
 
 <h2> Deseja dar acesso de leitura ao utilizador: </h2>
 
-@using(@Html.BeginForm("GiveReadRights", "Boards", FormMethod.Post, new { onSubmit = "return validateRegisterForm()" }))
+@using (@Html.BeginForm("GiveReadRights", "Boards", FormMethod.Post, new { onSubmit = "return areAllReqFieldsFilled(this)" }))
 {
     @Html.LabelFor(m => m.Name)
     @Html.EditorFor(m => m.Name)

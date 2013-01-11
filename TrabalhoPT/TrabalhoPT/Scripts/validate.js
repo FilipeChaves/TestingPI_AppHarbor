@@ -39,7 +39,7 @@ function validateRegisterForm() {
         return false;
     if (f["Username"] === undefined || f["Email"] === undefined || f["Password"] === undefined)
         return false;
-    return (userValidation(f["Username"]) && passValidation(f["Password"]) && emailValidation(f["Email"]));
+    return (userValidation(f["Username"]) && emailValidation(f["Email"]) && passValidation(f["Password"]) && passValidation(f["PasswordConfirmation"]));
 }
 
 function userValidation(user) {

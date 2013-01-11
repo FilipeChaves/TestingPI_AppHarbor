@@ -4,7 +4,7 @@
 }
 
 <h2>Alterar email</h2>
-@using(Html.BeginForm("ChangeEmail", "Account", FormMethod.Post, new { onSubmit = "return validateRegisterForm()" }))
+@using (Html.BeginForm("ChangeEmail", "Account", FormMethod.Post, new { onSubmit = "return areAllReqFieldsFilled(this)" }))
 {
     <p>
         @Html.Label("Email antigo")
