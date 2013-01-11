@@ -2,12 +2,12 @@
 
 <h2>Por favor coloque os seus dados:</h2>
 
-@using(Html.BeginForm())
+@using (Html.BeginForm("LogOn", "Account", FormMethod.Post, new { id = "loginForm", onSubmit = "return areAllReqFieldsFilled(this)" }))
     {
         <p>
             @Html.LabelFor(acc => acc.Username)
             @Html.EditorFor(acc => acc.Username)
-            @Html.ValidationMessageFor(acc => acc.Username)
+            @Html.ValidationMessageFor(acc => acc.Username) 
         </p>
         <p>
             @Html.LabelFor(acc => acc.Password)

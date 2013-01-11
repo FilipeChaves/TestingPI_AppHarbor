@@ -7,7 +7,7 @@
 
 <h2> Criar Lista para o Quadro '@Model.Board.Name' </h2>
 
-@using(@Html.BeginForm())
+@using (@Html.BeginForm("CreateList", "Boards", FormMethod.Post, new { onSubmit = "return areAllReqFieldsFilled(this)" }))
 {
     <p>
         @Html.LabelFor(l => l.Name)

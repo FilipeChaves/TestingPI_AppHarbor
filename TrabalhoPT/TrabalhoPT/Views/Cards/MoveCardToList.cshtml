@@ -7,7 +7,8 @@
 
 <h2> Mover cartão para outra lista</h2>
 
-@using(@Html.BeginForm()){
+@using (@Html.BeginForm("MoveCardToList", "Cards", FormMethod.Post, new { onSubmit = "return areAllReqFieldsFilled(this)" }))
+{
     <p>
         @Html.LabelFor(m => m.ListId)
         @Html.EditorFor(m => m.ListId)

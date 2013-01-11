@@ -7,7 +7,7 @@
 
 <h2> Criar cartão para a lista '@Model.List.Name' </h2>
 
-@using(Html.BeginForm())
+@using (Html.BeginForm("CreateCard", "Lists", FormMethod.Post, new { onSubmit = "return areAllReqFieldsFilled(this)" }))
 {
     <p>
         @Html.LabelFor(c => c.Name)

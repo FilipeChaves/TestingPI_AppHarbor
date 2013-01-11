@@ -186,5 +186,12 @@ namespace TrabalhoPT.Controllers
             acc.AddWriteBoard(board.Id);
             return RedirectToAction("GetLists", new { id = board.Id });
         }
+
+        [HttpGet]
+        public bool BoardExists(String id)
+        {
+            var board = BoardDataMapper.GetBoardDataMapper().GetByName(id);
+            return board != null;
+        }
     }
 }

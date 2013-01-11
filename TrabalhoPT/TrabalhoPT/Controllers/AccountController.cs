@@ -29,10 +29,7 @@ namespace TrabalhoPT.Controllers
         {
             FormsAuthentication.SignOut();
             if (User.Identity.IsAuthenticated)
-            {
-                return RedirectToAction("Index", "Home",
-                                        AccountDataMapper.GetAccountDataMapper().GetById(User.Identity.Name));
-            }
+                return RedirectToAction("Index", "Home", AccountDataMapper.GetAccountDataMapper().GetById(User.Identity.Name));
             return View();
         }
 
@@ -41,8 +38,7 @@ namespace TrabalhoPT.Controllers
         public ActionResult Register()
         {
             if (User.Identity.IsAuthenticated)
-                return RedirectToAction("Index", "Home",
-                                        AccountDataMapper.GetAccountDataMapper().GetById(User.Identity.Name));
+                return RedirectToAction("Index", "Home", AccountDataMapper.GetAccountDataMapper().GetById(User.Identity.Name));
             return View();
         }
 
@@ -149,12 +145,11 @@ namespace TrabalhoPT.Controllers
         public ActionResult Register(RegisterAccountModel accountModel)
         {
             AccountModel acc = LoginUtils.RegisterAccount(accountModel);
-            if (acc != null)
-            {
+            if (acc != null){
                 LoginUtils.SendConfirmationMail(acc);
-                return RedirectToAction("Confirmation", "Account");
+                return RedirectToAction("Confirmation");
             }
-            return Register();
+            return RedirectToAction("Register");
         }
 
         [Authorize]
@@ -214,6 +209,13 @@ namespace TrabalhoPT.Controllers
             var user = AccountDataMapper.GetAccountDataMapper().GetById(User.Identity.Name);
             user.ImageUrl = fc["ImageUrl"];
             return RedirectToAction("ShowInfo", user);
+        }
+
+        [HttpGet]
+        public bool UsernameExists(String id)
+        {
+            var user = AccountDataMapper.GetAccountDataMapper().GetById(id.ToLower());
+            return user != null;
         }
     }
 }
