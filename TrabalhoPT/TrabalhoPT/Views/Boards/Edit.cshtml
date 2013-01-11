@@ -7,7 +7,7 @@
 
 <h2> Editar Quadro </h2>
 
-@using(Html.BeginForm("Edit", "Boards", FormMethod.Post, new { onSubmit = "return validateRegisterForm()" })))
+@using(Html.BeginForm("Edit", "Boards", FormMethod.Post, new { onSubmit = "return validateRegisterForm()" }))
 {
     <p>
         @Html.LabelFor(m => m.Name)
