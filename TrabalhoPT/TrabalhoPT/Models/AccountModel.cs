@@ -10,9 +10,10 @@ namespace TrabalhoPT.Models
     {
         [Required(ErrorMessage = "Campo de preenchimento obrigatório")]
         public String Username { get; set; }
-        public String Email { get; set; }
         [Required(ErrorMessage = "Campo de preenchimento obrigatório")]
+        public String Email { get; set; }
         [DataType(DataType.Password)]
+        [Required(ErrorMessage = "Campo de preenchimento obrigatório")]
         public String Password { get; set; }
         public String Salt { get; set; }
         public String ConfirmationCode { get; set; }

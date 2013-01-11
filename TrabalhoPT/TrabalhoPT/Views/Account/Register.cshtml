@@ -1,27 +1,31 @@
-﻿@model TrabalhoPT.Models.AccountModel
+﻿@model TrabalhoPT.Models.RegisterAccountModel
 @{
     ViewBag.Title = "Registo";
 }
 
 <h2>Registar nova conta:</h2>
 
-@using(Html.BeginForm())
+@using (Html.BeginForm("Register", "Account", FormMethod.Post, new { onSubmit = "return validateRegisterForm()" }))
 {
     <p>
         @Html.LabelFor(acc => acc.Username)
-        @Html.EditorFor(acc => acc.Username)
+        @Html.TextBoxFor(acc => acc.Username, new { onblur = "return userValidation(this)" })
         @Html.ValidationMessageFor(acc => acc.Username)
     </p>
     <p>
         @Html.LabelFor(acc => acc.Email)
-        @Html.EditorFor(acc => acc.Email)
+        @Html.TextBoxFor(acc => acc.Email, new { onblur = "return emailValidation(this)" })
         @Html.ValidationMessageFor(acc => acc.Email)
     </p>
     <p>
         @Html.LabelFor(acc => acc.Password)
-        @Html.EditorFor(acc => acc.Password)
+        @Html.TextBoxFor(acc => acc.Password, new { type = "password", onblur = "return passValidation(this)" })
         @Html.ValidationMessageFor(acc => acc.Password)
-        
+    </p>
+        <p>
+        @Html.LabelFor(acc => acc.ConfirmPassword)
+        @Html.TextBoxFor(acc => acc.ConfirmPassword, new { type = "password", onblur = "return passValidation(this)" })
+        @Html.ValidationMessageFor(acc => acc.ConfirmPassword)
     </p>
     <input type="submit" value="Submit"/>
 }
