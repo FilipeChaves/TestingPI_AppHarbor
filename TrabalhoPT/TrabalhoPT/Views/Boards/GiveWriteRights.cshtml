@@ -7,7 +7,7 @@
 
 <h2> Deseja dar acesso de escrita ao utilizador: </h2>
 
-@using(@Html.BeginForm())
+@using(@Html.BeginForm("GiveWriteRights", "Boards", FormMethod.Post, new { onSubmit = "return validateRegisterForm()" }))
 {
     @Html.LabelFor(m => m.Name)
     @Html.EditorFor(m => m.Name)

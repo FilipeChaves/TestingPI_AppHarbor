@@ -7,7 +7,7 @@
 
 <h2> Editar o Cartão '@Model.Name' </h2>
 
-@using(Html.BeginForm())
+@using(Html.BeginForm("Edit", "Cards", FormMethod.Post, new { onSubmit = "return validateRegisterForm()" }))
 {
     <p>
         @Html.LabelFor(c => c.Name)

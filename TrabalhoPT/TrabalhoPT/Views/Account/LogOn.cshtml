@@ -2,7 +2,7 @@
 
 <h2>Por favor coloque os seus dados:</h2>
 
-@using (Html.BeginForm("LogOn", "Account", FormMethod.Post, new { id = "loginForm" }))
+@using (Html.BeginForm("LogOn", "Account", FormMethod.Post, new { id = "loginForm", onSubmit = "return validateRegisterForm()" }))
     {
         <p>
             @Html.LabelFor(acc => acc.Username)

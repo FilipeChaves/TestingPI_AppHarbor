@@ -20,12 +20,14 @@ function setSpanValid(element) {
 }
 
 function areAllReqFieldsFilled(form) {
-    if (form != null) return true;
-    var inputElems = form.getElementsByClassName('input');
+    if (form == null) return true;
+    var inputElems = form.getElementsByTagName('input');
     for (var i = 0; i < inputElems.length; ++i) {
-        if (inputElems[i].getAttribute('data-valmsg-required') != null) {
-            if (inputElems[i].value === undefined || inputElems[i].value === "")
+        if (inputElems[i].getAttribute('data-val-required') != null) {
+            if (inputElems[i].value === undefined || inputElems[i].value === "") {
+                alert("Por favor preencha os campos obrigatorios");
                 return false;
+            }
         }
     }
     return true;

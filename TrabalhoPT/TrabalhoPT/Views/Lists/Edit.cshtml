@@ -7,7 +7,7 @@
 
 <h2> Editar a lista '@Model.Name' </h2>
 
-@using(Html.BeginForm())
+@using(Html.BeginForm("Edit", "Lists", FormMethod.Post, new { onSubmit = "return validateRegisterForm()" }))
 {
     <p>
         @Html.LabelFor(m => m.Name)

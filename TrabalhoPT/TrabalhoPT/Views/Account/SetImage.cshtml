@@ -4,7 +4,7 @@
 
 <h2>Definir fotografia</h2>
 
-@using(Html.BeginForm())
+@using(Html.BeginForm("SetImage", "Account", FormMethod.Post, new { onSubmit = "return validateRegisterForm()" }))
 {
     <p>
         @Html.Label("URL: ")
