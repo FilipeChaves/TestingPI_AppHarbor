@@ -108,5 +108,15 @@ namespace TrabalhoPT.Controllers
             ListDataMapper.GetListDataMapper().Remove(list);
             return RedirectToAction("GetLists", "Boards", new { id = boardId });
         }
+
+        [HttpPost]
+        [Authorize]
+        public void SetCard(int id, int id2, int id3)
+        {
+            var list = ListDataMapper.GetListDataMapper().GetById(id);
+            var card = CardDataMapper.GetCardDataMapper().GetById(id2);
+            card.List = list;
+            card.Idx = id3;
+        }
     }
 }
