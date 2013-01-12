@@ -72,7 +72,6 @@ namespace TrabalhoPT.Controllers
         [Authorize]
         public ActionResult RemoveList(int id)
         {
-            
             var list = ListDataMapper.GetListDataMapper().GetById(id);
             if (list == null)
                 return RedirectToAction("Http404", "Errors");

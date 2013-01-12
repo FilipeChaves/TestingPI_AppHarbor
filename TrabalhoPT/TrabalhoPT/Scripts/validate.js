@@ -42,31 +42,76 @@ function validateRegisterForm() {
     return (userValidation(f["Username"]) && emailValidation(f["Email"]) && passValidation(f["Password"]) && passValidation(f["PasswordConfirmation"]));
 }
 
-function userValidation(user) {
-    var userString = user.value;
-    if (userString.length < 3) {
-        setSpanError(user, 'O Username precisa de ter mais do que 2 caracteres');
+function sendRequest(input, linkToReq, msg) {
+    var xmlhttp = new XMLHttpRequest();
+    xmlhttp.onreadystatechange = function () {
+        if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+            if (xmlhttp.responseText === 'True') {
+                setSpanError(input, msg);
+                return;
+            }
+            setSpanValid(input);
+        }
+    };
+    xmlhttp.open('GET', linkToReq);
+    return xmlhttp.send();
+}
+
+function hasMoreThanXChars(number, input, str, msg) {
+    if (str.length <= number) {
+        setSpanError(input, msg);
         return false;
     }
-    
+    setSpanValid(input);
+    return true;
+}
+
+function userValidation(user) {
+    var userString = user.value;
+    if (hasMoreThanXChars(2, user, userString, 'O Username precisa de ter mais do que 2 caracteres') === false)
+        return false;
+    return sendRequest(user, '/Account/UsernameExists/' + userString, 'Esse nome de utilizador já existe');
+}
+
+function boardValidation(board) {
+    var boardString = board.value;
+    if (hasMoreThanXChars(2, board, boardString, 'O nome do quadro precisa de ter mais do que 2 caracteres') === false)
+        return false;
+    return sendRequest(board, '/Boards/BoardExists/' + boardString, 'Esse nome já existe num quadro seu');
+}
+
+function listValidation(list) {
+    var listString = list.value;
+    if (hasMoreThanXChars(2, list, listString, 'O nome da lista precisa de ter mais do que 2 caracteres') === false)
+        return false;
+    var currentUrl = document.URL;
+    var linkToReq = '/Boards/ExistingLists' + currentUrl.substring(currentUrl.lastIndexOf('/'), currentUrl.length);
+    console.log(linkToReq);
     var xmlhttp = new XMLHttpRequest();
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            if (xmlhttp.responseText === 'True') {
-                setSpanError(user, 'Esse nome de utilizador já existe');
-                return;
+            var enumLists = JSON.parse(xmlhttp.responseText);
+            for (var i = 0; i < enumLists.length; ++i) {
+                if (enumLists[i].Name == listString) {
+                    setSpanError(list, 'Esse nome já existe numa lista deste quadro');
+                    return;
+                }
             }
-            setSpanValid(user);
+            setSpanValid(list);
         }
     };
-    xmlhttp.open('GET', '/Account/UsernameExists/' + userString);
+    xmlhttp.open('GET', linkToReq);
     return xmlhttp.send();
+    //return sendRequest(list, url, 'Esse nome já existe numa lista deste quadro');
 }
 
 function emailValidation(email) {
     var emailString = email.value;
+    var str = 'Introduza um email valido';
+    if (hasMoreThanXChars(6, email, emailString, str) === false)
+        return false;
     if (emailString.indexOf("@", 0) == -1 || emailString.indexOf(".", 0) == -1) {
-        setSpanError(email, 'Introduza um email válido');
+        setSpanError(email, str);
         return false;
     }
     setSpanValid(email);
@@ -75,10 +120,7 @@ function emailValidation(email) {
 
 function passValidation(password) {
     var passString = password.value;
-    if (passString.length < 6) {
-        setSpanError(password, 'A password tem de ter mais de 6 caracteres');
+    if (hasMoreThanXChars(6, password, passString, 'A password tem de ter mais de 6 caracteres') === false)
         return false;
-    }
-    setSpanValid(password);
     return true;
 }

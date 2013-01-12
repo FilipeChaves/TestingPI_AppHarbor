@@ -48,6 +48,12 @@ namespace TrabalhoPT.DataMappers
             return _boards.FindAll(board => account.CanReadBoard(board.Id));
         }
 
+        public BoardsModel GetBoardByUserAndName(AccountModel account, String name)
+        {
+            var boards = GetBoardsFrom(account).ToList();
+            return boards.Find(board => board.Name == name);
+        }
+
         public BoardsModel GetByName(String name)
         {
             return _boards.Find(board => board.Name == name);
