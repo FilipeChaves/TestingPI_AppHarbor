@@ -11,7 +11,7 @@
 {
     <p>
         @Html.LabelFor(l => l.Name)
-        @Html.EditorFor(l => l.Name)
+        @Html.TextBoxFor(l => l.Name, new { onblur = "return listValidation(this)" })
         @Html.ValidationMessageFor(l => l.Name)
     </p>
     <input type="submit" value="Submeter" />

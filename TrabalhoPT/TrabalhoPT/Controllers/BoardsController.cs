@@ -1,8 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Net;
-using System.Web;
 using System.Web.Mvc;
 using TrabalhoPT.DataMappers;
 using TrabalhoPT.Models;
@@ -188,10 +185,21 @@ namespace TrabalhoPT.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public bool BoardExists(String id)
         {
-            var board = BoardDataMapper.GetBoardDataMapper().GetByName(id);
+            var user = AccountDataMapper.GetAccountDataMapper().GetById(User.Identity.Name);
+            var board = BoardDataMapper.GetBoardDataMapper().GetBoardByUserAndName(user, id);
             return board != null;
+        }
+
+        [HttpGet]
+        [Authorize]
+        public JsonResult ExistingLists(int id)
+        {
+            var user = AccountDataMapper.GetAccountDataMapper().GetById(User.Identity.Name);
+            return user.CanReadBoard(id) ? Json(
+                ListDataMapper.GetListDataMapper().GetAllByBoard(BoardDataMapper.GetBoardDataMapper().GetById(id)), JsonRequestBehavior.AllowGet) : null;
         }
     }
 }

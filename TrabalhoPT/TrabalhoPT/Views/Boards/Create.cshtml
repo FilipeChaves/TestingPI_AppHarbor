@@ -7,11 +7,11 @@
 
 <h2> Criar Quadro </h2>
 
-@using (Html.BeginForm("Create", "Boards", FormMethod.Post, new { onSubmit = "return areAllReqFieldsFilled(this)" }))
+@using (Html.BeginForm("Create", "Boards", FormMethod.Post, new {onSubmit = "return areAllReqFieldsFilled(this)"}))
 {
     <p>
         @Html.LabelFor(m => m.Name)
-        @Html.EditorFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { onblur = "return boardValidation(this)"})
         @Html.ValidationMessageFor(m => m.Name)
     </p>
     <p>
