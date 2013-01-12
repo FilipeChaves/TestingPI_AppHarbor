@@ -54,7 +54,7 @@ function sendRequest(input, linkToReq, msg) {
             setSpanValid(input);
         }
     };
-    xmlhttp.open('GET', linkToReq);
+    xmlhttp.open('GET', linkToReq, false);
     return xmlhttp.send();
 }
 
@@ -104,9 +104,8 @@ function listValidation(list) {
             setSpanValid(list);
         }
     };
-    xmlhttp.open('GET', linkToReq);
+    xmlhttp.open('GET', linkToReq, false);
     var b = xmlhttp.send();
-    setTimeout(function() { }, 100);
     return b;
     //return sendRequest(list, url, 'Esse nome já existe numa lista deste quadro');
 }
