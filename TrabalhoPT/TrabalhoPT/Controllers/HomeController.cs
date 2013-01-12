@@ -30,7 +30,7 @@ namespace TrabalhoPT.Controllers
             
             //Guarda os boards do user e procura boards cujo nome contenha id
             IEnumerable<BoardsModel> boards = b.GetBoardsFrom(AccountDataMapper.GetAccountDataMapper().GetById(User.Identity.Name));
-            GetResultsByName(boards, "/Boards/GetLists/", result, counter, id);
+            GetResultsByName(boards, "/Boards/GetLists/", "[Board]", result, counter, id);
             
             //No caso de ainda poderem ser adicionados resultados adiciona lists
             if (counter > 0)
@@ -42,7 +42,7 @@ namespace TrabalhoPT.Controllers
                 {
                     IEnumerable<ListsModel> lists = l.GetAllByBoard(bm);
                     allLists.AddRange(lists);
-                    GetResultsByName(lists, "/Lists/GetCards/", result, counter, id);
+                    GetResultsByName(lists, "/Lists/GetCards/", "[List]", result, counter, id);
                 }
 
                 //Se ainda poderem ser adicionados resultados adiciona cards
@@ -54,20 +54,20 @@ namespace TrabalhoPT.Controllers
                     {
                         IEnumerable<CardsModel> cards = c.GetAllByList(lm);
                         allCards.AddRange(cards);
-                        GetResultsByName(cards, "/Cards/GetCard/",result,counter,id);
+                        GetResultsByName(cards, "/Cards/GetCard/", "[Card]", result, counter, id);
                     }
 
                     //Se ainda poderem ser adicionados resultados adiciona cards pela descrição
                     if (counter > 0)
                     {
-                        GetResultsByDescription(allCards,"/Cards/GetCard/", result, counter, id);
+                        GetResultsByDescription(allCards,"/Cards/GetCard/", "[Card]", result, counter, id);
                     }
                 }
             }
             return PartialView("Search",result);
         }
 
-        public void GetResultsByName(IEnumerable<BLCModel> datamapper, String url, List<KeyValuePair<String, String>> result, int counter, String id)
+        public void GetResultsByName(IEnumerable<BLCModel> datamapper, String url, String type, List<KeyValuePair<String, String>> result, int counter, String id)
         {
             foreach (BLCModel bm in datamapper)
             {
@@ -75,14 +75,14 @@ namespace TrabalhoPT.Controllers
                     return;
                 if (bm.Name.ToLower().Contains(id.ToLower()))
                 {
-                    result.Add(new KeyValuePair<String, String>(bm.Name, url + bm.Id));
+                    result.Add(new KeyValuePair<String, String>(bm.Name+" "+type, url + bm.Id));
                     --counter;
                 }
             }
         }
 
         //Mesmo que o cartão ja tenha sido adicionado, caso a descrição tenha ID volta a adicionar
-        public void GetResultsByDescription(IEnumerable<CardsModel> datamapper, String url, List<KeyValuePair<String, String>> result, int counter, String id)
+        public void GetResultsByDescription(IEnumerable<CardsModel> datamapper, String url, String type, List<KeyValuePair<String, String>> result, int counter, String id)
         {
             foreach (CardsModel cm in datamapper)
             {
@@ -90,7 +90,7 @@ namespace TrabalhoPT.Controllers
                     return;
                 if (cm.Description != null && cm.Description.ToLower().Contains(id.ToLower()))
                 {
-                    result.Add(new KeyValuePair<String, String>(cm.Name, url + cm.Id));
+                    result.Add(new KeyValuePair<String, String>(cm.Name + " " + type, url + cm.Id));
                     --counter;
                 }
             }

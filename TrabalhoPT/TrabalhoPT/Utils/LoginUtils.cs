@@ -5,6 +5,7 @@ using System.Net;
 using System.Net.Mail;
 using System.Security.Cryptography;
 using System.Web;
+using System.Web.Mvc;
 using System.Web.Security;
 using TrabalhoPT.DataMappers;
 using TrabalhoPT.Models;
@@ -15,12 +16,12 @@ namespace TrabalhoPT.Utils
     {
         private const int CONF_CODE_SIZE = 16;
         private const int SALT_SIZE = 8;
-        private const String EMAIL = "andre.fc.figueiredo@gmail.com";
-        private const String EMAIL_PW = "1Calypse1";
-        //private const String EMAIL = "trello.pi.isel@gmail.com";
-        //private const String EMAIL_PW = "amelhorpassworddomundo";
+        //private const String EMAIL = "andre.fc.figueiredo@gmail.com";
+        //private const String EMAIL_PW = "1Calypse1";
+        private const String EMAIL = "trello.pi.isel@gmail.com";
+        private const String EMAIL_PW = "amelhorpassworddomundo";
         private const String CONF_SUBJECT = "Confirmação de registo!";
-        private const String CONF_BASE_URI = "http://localhost:49864/Account/Verify/";
+        private const String CONF_URI = "/Account/Verify/";
 
         public static void EncryptPassword(AccountModel accountModel)
         {
@@ -97,13 +98,13 @@ namespace TrabalhoPT.Utils
             return encoding.GetBytes(str);
         }
 
-        public static void SendConfirmationMail(AccountModel accountModel)
+        public static void SendConfirmationMail(AccountModel accountModel, String baseUrl)
         {
             MailMessage m = new MailMessage();
             m.From = new MailAddress(EMAIL);
             m.To.Add(accountModel.Email);
             m.Subject = CONF_SUBJECT;
-            m.Body = CONF_BASE_URI+accountModel.ConfirmationCode;
+            m.Body = baseUrl + CONF_URI + accountModel.ConfirmationCode;
             System.Net.Mail.SmtpClient smtp = new System.Net.Mail.SmtpClient("smtp.gmail.com");
             smtp.UseDefaultCredentials = false;
             smtp.Credentials = new NetworkCredential(EMAIL, EMAIL_PW);

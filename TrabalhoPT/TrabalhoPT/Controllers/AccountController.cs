@@ -146,7 +146,7 @@ namespace TrabalhoPT.Controllers
         {
             AccountModel acc = LoginUtils.RegisterAccount(accountModel);
             if (acc != null){
-                LoginUtils.SendConfirmationMail(acc);
+                LoginUtils.SendConfirmationMail(acc, Request.Url.GetLeftPart(UriPartial.Authority));
                 return RedirectToAction("Confirmation");
             }
             return RedirectToAction("Register");
