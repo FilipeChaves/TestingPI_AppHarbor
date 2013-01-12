@@ -7,9 +7,11 @@ using System.Web;
 
 namespace TrabalhoPT.Models
 {
-    public class BoardsModel : BLCModel
+    public class BLCModel
     {
-        [DisplayName("Descrição")]
-        public String Description { get; set; }
+        public int Id { get; set; } //Preenchido automaticamente
+        [Required]
+        [DisplayName("Nome")]
+        public String Name { get; set; }
     }
 }

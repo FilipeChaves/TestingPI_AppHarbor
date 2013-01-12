@@ -25,9 +25,13 @@
                 }
             </div>
              <div id="searchDiv" >
-              @using(Html.BeginForm("Search", "Home")){
-                <input id="searchBar" type="text" value="Introduza a sua pesquisa" onclick="removeValue(this)" onkeyup="showResult(this.value)"/>
-              }
+                @if(Request.IsAuthenticated)
+                {
+                    using (Html.BeginForm("Search", "Home"))
+                     {
+                         <input id="searchBar" type="text" value="Introduza a sua pesquisa" onclick="removeValue(this)" onkeyup="showResult(this.value)"/>
+                     }
+                }
             </div>
             <div id="searchResults"></div>
             <div id="menucontainer">

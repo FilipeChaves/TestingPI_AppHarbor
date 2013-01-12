@@ -112,6 +112,7 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModel.cs" />
+    <Compile Include="Models\BLCModel.cs" />
     <Compile Include="Models\BoardsModel.cs" />
     <Compile Include="Models\CardsModel.cs" />
     <Compile Include="Models\ChangeEmailModel.cs" />

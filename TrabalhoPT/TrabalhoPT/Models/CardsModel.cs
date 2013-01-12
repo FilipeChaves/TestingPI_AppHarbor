@@ -7,13 +7,9 @@ using System.Web;
 
 namespace TrabalhoPT.Models
 {
-    public class CardsModel
+    public class CardsModel : BLCModel
     {
-        public int Id { get; set; }
         public ListsModel List { get; set; }
-        [Required]
-        [DisplayName("Nome")]
-        public String Name { get; set; }
         [DisplayName("Descrição")]
         public String Description { get; set; }
         [Required]

@@ -7,13 +7,8 @@ using System.Web;
 
 namespace TrabalhoPT.Models
 {
-    public class ListsModel
+    public class ListsModel : BLCModel
     {
-        
-        public int Id { get; set; } //Preenchido automaticamente
         public BoardsModel Board { get; set; }
-        [Required]
-        [DisplayName("Nome")]
-        public String Name { get; set; }
     }
 }
