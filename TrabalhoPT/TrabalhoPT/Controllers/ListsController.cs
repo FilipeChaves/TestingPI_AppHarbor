@@ -36,9 +36,7 @@ namespace TrabalhoPT.Controllers
             if (!AccountDataMapper.GetAccountDataMapper().GetById(User.Identity.Name).CanReadBoard(list.Board.Id))
                 return RedirectToAction("Index", "Boards");
             var cm = CardDataMapper.GetCardDataMapper().GetAllByList(list);
-            if (cm.Count() != 0)
-                return PartialView(cm);
-            return View("Empty", list);
+            return PartialView(cm);
         }
 
         [HttpGet]
