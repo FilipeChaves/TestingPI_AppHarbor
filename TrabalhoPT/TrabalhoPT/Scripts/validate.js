@@ -30,6 +30,8 @@ function areAllReqFieldsFilled(form) {
             }
         }
     }
+    if (form.getElementsByClassName('field-validation-error').length > 0)
+        return false;
     return true;
 }
 
@@ -57,32 +59,33 @@ function sendRequest(input, linkToReq, msg) {
     return xmlhttp.send();
 }
 
-function hasMoreThanXChars(number, input, str, msg) {
+function hasMoreThanXChars(number, input, str, msg, b) {
     if (str.length <= number) {
         setSpanError(input, msg);
         return false;
     }
-    setSpanValid(input);
+    if(b)
+        setSpanValid(input);
     return true;
 }
 
 function userValidation(user) {
     var userString = user.value;
-    if (hasMoreThanXChars(2, user, userString, 'O Username precisa de ter mais do que 2 caracteres') === false)
+    if (hasMoreThanXChars(2, user, userString, 'O Username precisa de ter mais do que 2 caracteres', false) === false)
         return false;
     return sendRequest(user, '/Account/UsernameExists/' + userString, 'Esse nome de utilizador já existe');
 }
 
 function boardValidation(board) {
     var boardString = board.value;
-    if (hasMoreThanXChars(2, board, boardString, 'O nome do quadro precisa de ter mais do que 2 caracteres') === false)
+    if (hasMoreThanXChars(2, board, boardString, 'O nome do quadro precisa de ter mais do que 2 caracteres', false) === false)
         return false;
     return sendRequest(board, '/Boards/BoardExists/' + boardString, 'Esse nome já existe num quadro seu');
 }
 
 function listValidation(list) {
     var listString = list.value;
-    if (hasMoreThanXChars(2, list, listString, 'O nome da lista precisa de ter mais do que 2 caracteres') === false)
+    if (hasMoreThanXChars(2, list, listString, 'O nome da lista precisa de ter mais do que 2 caracteres', false) === false)
         return false;
     var currentUrl = document.URL;
     var linkToReq = '/Boards/ExistingLists' + currentUrl.substring(currentUrl.lastIndexOf('/'), currentUrl.length);
@@ -108,7 +111,7 @@ function listValidation(list) {
 function emailValidation(email) {
     var emailString = email.value;
     var str = 'Introduza um email valido';
-    if (hasMoreThanXChars(6, email, emailString, str) === false)
+    if (hasMoreThanXChars(6, email, emailString, str, false) === false)
         return false;
     if (emailString.indexOf("@", 0) == -1 || emailString.indexOf(".", 0) == -1) {
         setSpanError(email, str);
@@ -120,7 +123,7 @@ function emailValidation(email) {
 
 function passValidation(password) {
     var passString = password.value;
-    if (hasMoreThanXChars(6, password, passString, 'A password tem de ter mais de 6 caracteres') === false)
+    if (hasMoreThanXChars(6, password, passString, 'A password tem de ter mais de 6 caracteres', true) === false)
         return false;
     return true;
 }
