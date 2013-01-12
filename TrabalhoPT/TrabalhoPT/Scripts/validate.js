@@ -20,6 +20,7 @@ function setSpanValid(element) {
 }
 
 function areAllReqFieldsFilled(form) {
+    console.log('submit');
     if (form == null) return true;
     var inputElems = form.getElementsByTagName('input');
     for (var i = 0; i < inputElems.length; ++i) {
@@ -38,8 +39,6 @@ function areAllReqFieldsFilled(form) {
 function validateRegisterForm() {
     var f = document.forms[1];
     if (f.getElementsByClassName('field-validation-error').length > 0 || areAllReqFieldsFilled(f))
-        return false;
-    if (f["Username"] === undefined || f["Email"] === undefined || f["Password"] === undefined)
         return false;
     return (userValidation(f["Username"]) && emailValidation(f["Email"]) && passValidation(f["Password"]) && passValidation(f["PasswordConfirmation"]));
 }
@@ -84,6 +83,7 @@ function boardValidation(board) {
 }
 
 function listValidation(list) {
+    console.log('lista');
     var listString = list.value;
     if (hasMoreThanXChars(2, list, listString, 'O nome da lista precisa de ter mais do que 2 caracteres', false) === false)
         return false;
