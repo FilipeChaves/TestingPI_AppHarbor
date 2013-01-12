@@ -105,7 +105,9 @@ function listValidation(list) {
         }
     };
     xmlhttp.open('GET', linkToReq);
-    return xmlhttp.send();
+    var b = xmlhttp.send();
+    sleep(100);
+    return b;
     //return sendRequest(list, url, 'Esse nome já existe numa lista deste quadro');
 }
 
