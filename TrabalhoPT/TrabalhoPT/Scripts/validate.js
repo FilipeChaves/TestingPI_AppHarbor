@@ -94,6 +94,7 @@ function listValidation(list) {
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
             var enumLists = JSON.parse(xmlhttp.responseText);
+            console.log(enumLists);
             for (var i = 0; i < enumLists.length; ++i) {
                 if (enumLists[i].Name == listString) {
                     setSpanError(list, 'Esse nome já existe numa lista deste quadro');
