@@ -182,6 +182,8 @@
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
     <Content Include="Global.asax" />
     <None Include="Scripts\jquery-1.7.1.intellisense.js" />
+    <Content Include="Scripts\board.modern-view.animation.js" />
+    <Content Include="Scripts\board.modern-view.js" />
     <Content Include="Scripts\image.resize.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -251,6 +253,7 @@
     <Content Include="Views\Cards\MoveCardToList.cshtml" />
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
+    <Content Include="Views\Lists\GetCardsByAjaxRequest.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

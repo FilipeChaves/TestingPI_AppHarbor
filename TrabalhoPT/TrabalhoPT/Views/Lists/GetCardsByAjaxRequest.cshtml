@@ -1,0 +1,13 @@
+﻿@model IEnumerable<TrabalhoPT.Models.CardsModel>
+
+@{
+    ViewBag.Title = "GetCardsByAjaxRequest";
+}
+
+<ul id="lists" class="connectedSortable">
+@foreach (var card in @Model)
+{
+    var link = "/Cards/GetCard/" + @card.Id;
+    <li><a href=@link>@card.Name</a></li>
+}
+</ul>

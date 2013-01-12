@@ -1,5 +1,6 @@
 var max_size = 200;
-$("img").each(function (i) {
+console.log("estou no resize");
+$("img").onload(function (i) {
     if ($(this).height() > $(this).width()) {
         var h = max_size;
         var w = Math.ceil($(this).width() / $(this).height() * max_size);

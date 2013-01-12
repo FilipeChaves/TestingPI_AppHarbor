@@ -12,15 +12,31 @@ namespace TrabalhoPT.Controllers
     {
         [HttpGet]
         [Authorize]
-        public ActionResult GetCards(int id){
+        public ActionResult GetCards(int id)
+        {
             var list = ListDataMapper.GetListDataMapper().GetById(id);
             if (list == null)
                 return RedirectToAction("Http404", "Errors");
             if (!AccountDataMapper.GetAccountDataMapper().GetById(User.Identity.Name).CanReadBoard(list.Board.Id))
                 return RedirectToAction("Index", "Boards");
             var cm = CardDataMapper.GetCardDataMapper().GetAllByList(list);
-            if(cm.Count() != 0)
+            if (cm.Count() != 0)
                 return View(cm);
+            return View("Empty", list);
+        }
+
+        [HttpGet]
+        [Authorize]
+        public ActionResult GetCardsByAjaxRequest(int id)
+        {
+            var list = ListDataMapper.GetListDataMapper().GetById(id);
+            if (list == null)
+                return RedirectToAction("Http404", "Errors");
+            if (!AccountDataMapper.GetAccountDataMapper().GetById(User.Identity.Name).CanReadBoard(list.Board.Id))
+                return RedirectToAction("Index", "Boards");
+            var cm = CardDataMapper.GetCardDataMapper().GetAllByList(list);
+            if (cm.Count() != 0)
+                return PartialView(cm);
             return View("Empty", list);
         }
 

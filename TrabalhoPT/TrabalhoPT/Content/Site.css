@@ -241,6 +241,16 @@ table th {
     color: Red;
 }
 
+.left {
+    float:left;
+    width:20%;
+    text-align: center;
+}
+
+.operations {
+    
+}
+
 nav, 
 #menucontainer {
     margin-top: 40px;
