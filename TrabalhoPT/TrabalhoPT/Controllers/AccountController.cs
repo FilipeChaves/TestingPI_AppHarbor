@@ -145,8 +145,12 @@ namespace TrabalhoPT.Controllers
         public ActionResult Register(RegisterAccountModel accountModel)
         {
             AccountModel acc = LoginUtils.RegisterAccount(accountModel);
-            if (acc != null){
-                LoginUtils.SendConfirmationMail(acc, Request.Url.GetLeftPart(UriPartial.Authority));
+            if (acc != null)
+            {
+                String baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
+                if (!baseUrl.Contains("localhost"))
+                    baseUrl = baseUrl.Split(':')[0];
+                LoginUtils.SendConfirmationMail(acc, baseUrl);
                 return RedirectToAction("Confirmation");
             }
             return RedirectToAction("Register");
