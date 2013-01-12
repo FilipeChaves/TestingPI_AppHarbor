@@ -149,7 +149,10 @@ namespace TrabalhoPT.Controllers
             {
                 String baseUrl = Request.Url.GetLeftPart(UriPartial.Authority);
                 if (!baseUrl.Contains("localhost"))
-                    baseUrl = baseUrl.Split(':')[0];
+                {
+                    String[] urlPart = baseUrl.Split(':');
+                    baseUrl = urlPart[0]+urlPart[1];
+                }
                 LoginUtils.SendConfirmationMail(acc, baseUrl);
                 return RedirectToAction("Confirmation");
             }
