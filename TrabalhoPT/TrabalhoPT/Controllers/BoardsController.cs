@@ -123,12 +123,12 @@ namespace TrabalhoPT.Controllers
                 return RedirectToAction("Http404", "Errors");
             if (!AccountDataMapper.GetAccountDataMapper().GetById(User.Identity.Name).CanWriteBoard(board.Id))
                 return RedirectToAction("Index");
-            return View(new GiveRightsModel { BoardId = id} );
+            return View(new RightsModel { BoardId = id} );
         }
 
         [HttpPost]
         [Authorize]
-        public ActionResult GiveReadRights(GiveRightsModel gr)
+        public ActionResult GiveReadRights(RightsModel gr)
         {
             var acc = AccountDataMapper.GetAccountDataMapper().GetById(gr.Name);
             if (acc == null)
@@ -138,13 +138,15 @@ namespace TrabalhoPT.Controllers
             }
             var board = BoardDataMapper.GetBoardDataMapper().GetById(gr.BoardId);
             if (board == null)
-            //return RedirectToAction("Http404", "Errors");
             {
                 ModelState.AddModelError("Name", "BoardId " + gr.BoardId);
                 return View(gr);
             }
             if (!AccountDataMapper.GetAccountDataMapper().GetById(User.Identity.Name).CanWriteBoard(board.Id))
-                return RedirectToAction("Index");
+            {
+                ModelState.AddModelError("BoardId", "Não possui permissões para efectuar essa acção");
+                return View(gr);
+            }
             acc.AddReadBoard(board.Id);
             return RedirectToAction("GetLists", new {id = board.Id});
         }
@@ -157,13 +159,13 @@ namespace TrabalhoPT.Controllers
             if (board == null)
                 return RedirectToAction("Http404", "Errors");
             if (!AccountDataMapper.GetAccountDataMapper().GetById(User.Identity.Name).CanWriteBoard(board.Id))
-                return RedirectToAction("Index", "Boards");
-            return View(new GiveRightsModel { BoardId = id });
+                return RedirectToAction("Index");
+            return View(new RightsModel { BoardId = id });
         }
 
         [HttpPost]
         [Authorize]
-        public ActionResult GiveWriteRights(GiveRightsModel gr)
+        public ActionResult GiveWriteRights(RightsModel gr)
         {
             var acc = AccountDataMapper.GetAccountDataMapper().GetById(gr.Name);
             if (acc == null)
@@ -173,17 +175,93 @@ namespace TrabalhoPT.Controllers
             }
             var board = BoardDataMapper.GetBoardDataMapper().GetById(gr.BoardId);
             if (board == null)
-                //return RedirectToAction("Http404", "Errors");
             {
                 ModelState.AddModelError("Name", "BoardId " + gr.BoardId);
                 return View(gr);
             }
             if (!AccountDataMapper.GetAccountDataMapper().GetById(User.Identity.Name).CanWriteBoard(board.Id))
-                return RedirectToAction("Index");
+            {
+                ModelState.AddModelError("BoardId", "Não possui permissões para efectuar essa acção");
+                return View(gr);
+            } 
             acc.AddWriteBoard(board.Id);
             return RedirectToAction("GetLists", new { id = board.Id });
         }
+        
+        [HttpGet]
+        [Authorize]
+        public ActionResult RemoveReadRights(int id)
+        {
+            var board = BoardDataMapper.GetBoardDataMapper().GetById(id);
+            if (board == null)
+                return RedirectToAction("Http404", "Errors");
+            if (!AccountDataMapper.GetAccountDataMapper().GetById(User.Identity.Name).CanWriteBoard(board.Id))
+                return RedirectToAction("Index");
+            return View(new RightsModel { BoardId = id });
+        }
 
+        [HttpPost]
+        [Authorize]
+        public ActionResult RemoveReadRights(RightsModel gr)
+        {
+            var acc = AccountDataMapper.GetAccountDataMapper().GetById(gr.Name);
+            if (acc == null)
+            {
+                ModelState.AddModelError("Name", "Não existe nenhum utilizador com esse username");
+                return View(gr);
+            }
+            var board = BoardDataMapper.GetBoardDataMapper().GetById(gr.BoardId);
+            if (board == null)
+            {
+                ModelState.AddModelError("BoardId", "Não existe nenhum quadro com esse id");
+                return View(gr);
+            }
+            if (!AccountDataMapper.GetAccountDataMapper().GetById(User.Identity.Name).CanWriteBoard(board.Id))
+            {
+                ModelState.AddModelError("BoardId", "Não possui permissões para efectuar essa acção");
+                return View(gr);
+            }
+            acc.RemoveReadBoard(board.Id);
+            return RedirectToAction("GetLists", new { id = board.Id });
+        }
+
+        [HttpGet]
+        [Authorize]
+        public ActionResult RemoveWriteRights(int id)
+        {
+            var board = BoardDataMapper.GetBoardDataMapper().GetById(id);
+            if (board == null)
+                return RedirectToAction("Http404", "Errors");
+            if (!AccountDataMapper.GetAccountDataMapper().GetById(User.Identity.Name).CanWriteBoard(board.Id))
+                return RedirectToAction("Index");
+            return View(new RightsModel { BoardId = id });
+        }
+
+        [HttpPost]
+        [Authorize]
+        public ActionResult RemoveWriteRights(RightsModel gr)
+        {
+            var acc = AccountDataMapper.GetAccountDataMapper().GetById(gr.Name);
+            if (acc == null)
+            {
+                ModelState.AddModelError("Name", "Não existe nenhum utilizador com esse username");
+                return View(gr);
+            }
+            var board = BoardDataMapper.GetBoardDataMapper().GetById(gr.BoardId);
+            if (board == null)
+            {
+                ModelState.AddModelError("Name", "BoardId " + gr.BoardId);
+                return View(gr);
+            }
+            if (!AccountDataMapper.GetAccountDataMapper().GetById(User.Identity.Name).CanWriteBoard(board.Id))
+            {
+                ModelState.AddModelError("BoardId", "Não possui permissões para efectuar essa acção");
+                return View(gr);
+            }
+            acc.RemoveWriteBoard(board.Id);
+            return RedirectToAction("GetLists", new { id = board.Id });
+        }
+        
         [HttpGet]
         [Authorize]
         public bool BoardExists(String id)

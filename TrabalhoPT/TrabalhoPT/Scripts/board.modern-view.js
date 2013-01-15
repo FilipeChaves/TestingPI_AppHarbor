@@ -21,10 +21,7 @@ $(function () {
                 var hrefList = div.childNodes[1].getAttribute('href');
                 var firstIdx = hrefList.indexOf('href');
                 var splitted = hrefList.substring(firstIdx).split('/', 5);
-                if (liElems.length === 0) {
-                    div.innerHTML += '<a href="/Lists/CreateCard/' + splitted[splitted.length - 1] + '">Adicionar Cartao</a>';
-                }
-                console.log(div.getElementsByTagName('ul'));
+                div.innerHTML += '<a href="/Lists/CreateCard/' + splitted[splitted.length - 1] + '">Adicionar Cartao</a>';
                 div.getElementsByTagName('ul')[0].setAttribute('id', splitted[splitted.length - 1]);
             }
         };
@@ -39,7 +36,7 @@ $(function () {
     dataDiv.appendChild(button);
     var css = document.createElement("style");
     css.type = "text/css";
-    css.innerHTML = ".connectedSortable li{ \ " +
+    css.innerHTML = " .connectedSortable li{ \ " +
                     "height: 10px; width:100px; padding:10px; border:5px solid gray; \
                     margin:2px; border-color: steelblue; background-color: steelblue; \
                     color: transparent; border-radius: 10px; \

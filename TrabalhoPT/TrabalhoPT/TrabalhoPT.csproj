@@ -117,7 +117,7 @@
     <Compile Include="Models\CardsModel.cs" />
     <Compile Include="Models\ChangeEmailModel.cs" />
     <Compile Include="Models\ChangePasswordModel.cs" />
-    <Compile Include="Models\GiveRightsModel.cs" />
+    <Compile Include="Models\RightsModel.cs" />
     <Compile Include="Models\ListsModel.cs" />
     <Compile Include="Models\MoveToListModel.cs" />
     <Compile Include="Models\RegisterAccountModel.cs" />
@@ -254,6 +254,8 @@
     <Content Include="Views\Home\Search.cshtml" />
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Lists\GetCardsByAjaxRequest.cshtml" />
+    <Content Include="Views\Boards\RemoveReadRights.cshtml" />
+    <Content Include="Views\Boards\RemoveWriteRights.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

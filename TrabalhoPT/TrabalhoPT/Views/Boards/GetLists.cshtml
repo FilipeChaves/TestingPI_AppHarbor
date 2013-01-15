@@ -8,7 +8,7 @@
     <script src="@Url.Content("~/Scripts/board.modern-view.animation.js")" type="text/javascript"></script>
 
 
-<h2> Listas do Quadro '@Model.First().Board.Name' [@Html.ActionLink("Dar acesso de leitura", "GiveReadRights", "Boards", new {id = Model.First().Board.Id}, null)] [@Html.ActionLink("Dar acesso de escrita", "GiveWriteRights", "Boards", new { id = Model.First().Board.Id }, null)] </h2>
+<h2> Listas do Quadro '@Model.First().Board.Name' [@Html.ActionLink("Dar acesso de leitura", "GiveReadRights", "Boards", new {id = Model.First().Board.Id}, null)] [@Html.ActionLink("Dar acesso de escrita", "GiveWriteRights", "Boards", new { id = Model.First().Board.Id }, null)] [@Html.ActionLink("Retirar acesso de leitura", "RemoveReadRights", "Boards", new {id = Model.First().Board.Id}, null)] [@Html.ActionLink("Retirar acesso de escrita", "RemoveWriteRights", "Boards", new { id = Model.First().Board.Id }, null)]</h2>
 
 <div id="userData">
     <ul class="toRemove">

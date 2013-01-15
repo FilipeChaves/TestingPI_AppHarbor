@@ -5,7 +5,7 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2> Todas as listas de '@Model.Name' [@Html.ActionLink("Dar acesso de leitura", "GiveReadRights", "Boards", new {id = Model.Id}, null)] [@Html.ActionLink("Dar acesso de escrita", "GiveWriteRights", "Boards", new { id = Model.Id }, null)] </h2>
+<h2> Todas as listas de '@Model.Name' [@Html.ActionLink("Dar acesso de leitura", "GiveReadRights", "Boards", new {id = Model.Id}, null)] [@Html.ActionLink("Dar acesso de escrita", "GiveWriteRights", "Boards", new { id = Model.Id }, null)] [@Html.ActionLink("Retirar acesso de leitura", "RemoveReadRights", "Boards", new {id = Model.Id}, null)] [@Html.ActionLink("Retirar acesso de escrita", "RemoveWriteRights", "Boards", new { id = Model.Id }, null)]</h2>
 
 <p> Não existem listas para este quadro </p>
 <p> @Html.ActionLink("Criar Lista", "CreateList", "Boards", new { id = @Model.Id}, null) </p>

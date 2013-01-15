@@ -1,13 +1,13 @@
 ﻿@model TrabalhoPT.Models.RightsModel
 
 @{
-    ViewBag.Title = "Dar acesso de Leitura";
+    ViewBag.Title = "Retirar acesso de Escrita";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2> Deseja dar acesso de leitura ao utilizador: </h2>
+<h2> Deseja retirar acesso de escrita ao utilizador: </h2>
 
-@using (@Html.BeginForm("GiveReadRights", "Boards", FormMethod.Post, new { onSubmit = "return areAllReqFieldsFilled(this)" }))
+@using (@Html.BeginForm("RemoveWriteRights", "Boards", FormMethod.Post, new { onSubmit = "return areAllReqFieldsFilled(this)" }))
 {
     <p>
         @Html.LabelFor(m => m.Name)

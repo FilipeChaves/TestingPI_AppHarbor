@@ -1,4 +1,6 @@
 function showResult(str) {
+    var form = document.getElementsByTagName('form')[0];
+    form.setAttribute('action', '/Home/Search/' + str);
 
     if (str.length < 3) {
         document.getElementById("searchResults").innerHTML = "";
@@ -9,8 +11,6 @@ function showResult(str) {
     xmlhttp.open('GET', '/Home/Search/' + str);
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
-            console.log(xmlhttp.responseText);
-            //document.getElementById("searchResults").style.border = "1px solid #A5ACB2";
             var results = xmlhttp.responseText.split("\n");
             for (var i = 0; i < results.length; ++i) {
                 var result = results[i].toString().trim();

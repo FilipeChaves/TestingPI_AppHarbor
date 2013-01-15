@@ -1,7 +1,7 @@
-﻿@model TrabalhoPT.Models.GiveRightsModel
+﻿@model TrabalhoPT.Models.RightsModel
 
 @{
-    ViewBag.Title = "Dar acesso Escrita";
+    ViewBag.Title = "Dar acesso de Escrita";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -9,12 +9,19 @@
 
 @using (@Html.BeginForm("GiveWriteRights", "Boards", FormMethod.Post, new { onSubmit = "return areAllReqFieldsFilled(this)" }))
 {
-    @Html.LabelFor(m => m.Name)
-    @Html.EditorFor(m => m.Name)
-    @Html.ValidationMessageFor(m => m.Name)
+    <p>
+        @Html.LabelFor(m => m.Name)
+        @Html.EditorFor(m => m.Name)
+        @Html.ValidationMessageFor(m => m.Name)  
+   </p>
     
-    @Html.LabelFor(m => m.BoardId)
-    @Html.EditorFor(m => m.BoardId)
-    @Html.ValidationMessageFor(m => m.BoardId)
-    <input type="submit" value="Submeter" />
+    <p>
+        @Html.LabelFor(m => m.BoardId)
+        @Html.EditorFor(m => m.BoardId)
+        @Html.ValidationMessageFor(m => m.BoardId)
+    </p>
+    
+    <p>
+        <input type="submit" value="Submeter" />
+    </p>
 }
