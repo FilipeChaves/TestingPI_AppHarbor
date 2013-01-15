@@ -19,8 +19,7 @@ function setSpanValid(element) {
     setSpanElement(element, '', 'field-validation-error', 'field-validation-valid');
 }
 
-function areAllReqFieldsFilled(form) {
-    console.log('submit');
+function areAllReqFieldsFilled(form, b) {
     if (form == null) return true;
     var inputElems = form.getElementsByTagName('input');
     for (var i = 0; i < inputElems.length; ++i) {
@@ -31,9 +30,14 @@ function areAllReqFieldsFilled(form) {
             }
         }
     }
-    if (form.getElementsByClassName('field-validation-error').length > 0)
-        return false;
+    if(b == true)
+        if (form.getElementsByClassName('field-validation-error').length > 0)
+            return false;
     return true;
+}
+
+function areAllReqFieldsFilled(form) {
+    return areAllReqFieldsFilled(form, true);
 }
 
 function validateRegisterForm() {

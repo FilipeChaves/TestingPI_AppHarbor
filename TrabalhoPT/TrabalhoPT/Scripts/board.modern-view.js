@@ -52,12 +52,10 @@ function saveTable() {
     for (var i = 0; i < ul.length; ++i) {
         var idList = ul[i].getAttribute('id');
         var li = ul[i].getElementsByTagName('li');
-        for (var c = 0; c < li.length; ++c)
-        {
+        for (var c = 0; c < li.length; ++c) {
             var idCard = li[c].getAttribute('id');
             var xmlhttp = new XMLHttpRequest();
-            console.log('/Lists/SetCard/' + idList + '/' + idCard + '/' + c);
-            xmlhttp.open('POST', '/Lists/SetCard/' + idList + '/' + idCard + '/' + c);
+            xmlhttp.open('POST', '/Lists/SetCard/'+ idList + '/' + idCard + '/' + c);
             xmlhttp.onreadystatechange = function () {
                 if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
                     console.log('changed');
